@@ -1,27 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,200&display=swap');
 
-:root{
-    --color:var(--color);
-}
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    text-transform: capitalize;
-    transition:all .2s linear;
-    text-decoration: none;
-}
-
-html{
-    font-size: 70%;
-}
-
-body{
-    overflow-x: hidden;
-}
-
-.header{
+/* .header{
     display: flex;
     align-items: center;
     justify-content:space-between;
@@ -35,4 +14,29 @@ body{
 .header .logo{
     font-size: 2.5rem;
     color:#fff;
-} */
+} */ 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;1,200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition:all .2s linear;
+    font-family: 'Poppins', sans-serif;
+    text-decoration-style: none;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+img
+{
+    width: 15%;
+    height: 15%;
+}
