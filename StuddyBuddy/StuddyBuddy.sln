@@ -7,6 +7,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTe
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StudyBuddyDB", "StudyBuddyDB\StudyBuddyDB.sqlproj", "{01528622-F60D-41EB-B19D-E6C5E073C7D0}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Front-end", "E:\OneDrive\OneDrive - Personal\OneDrive\Studies\CM2020 - Agile Software Projects\Final Project\Front-end\", "{DAC62DDE-3285-433A-9319-2EBBBD75448C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1048"
+		Debug.AspNetCompiler.PhysicalPath = "E:\OneDrive\OneDrive - Personal\OneDrive\Studies\CM2020 - Agile Software Projects\Final Project\Front-end\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1048\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1048"
+		Release.AspNetCompiler.PhysicalPath = "E:\OneDrive\OneDrive - Personal\OneDrive\Studies\CM2020 - Agile Software Projects\Final Project\Front-end\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1048\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1048"
+		SlnRelativePath = "E:\OneDrive\OneDrive - Personal\OneDrive\Studies\CM2020 - Agile Software Projects\Final Project\Front-end\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +44,10 @@ Global
 		{01528622-F60D-41EB-B19D-E6C5E073C7D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01528622-F60D-41EB-B19D-E6C5E073C7D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01528622-F60D-41EB-B19D-E6C5E073C7D0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DAC62DDE-3285-433A-9319-2EBBBD75448C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC62DDE-3285-433A-9319-2EBBBD75448C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC62DDE-3285-433A-9319-2EBBBD75448C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC62DDE-3285-433A-9319-2EBBBD75448C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
