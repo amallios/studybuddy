@@ -30,7 +30,7 @@ namespace StudyBuddyAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<studybuddyContext>(item => item.UseSqlServer(Configuration.GetConnectionString("StudyBuddyDBConnection")));
-            services.AddScoped<IStuddyBuddyRepository, StuddyBuddyRepository>();
+            services.AddScoped<IStudyBuddyRepository, StudyBuddyRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

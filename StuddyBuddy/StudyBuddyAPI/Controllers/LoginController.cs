@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using StudyBuddyAPI.Repository;
 
 namespace StudyBuddyAPI.Controllers
 {
@@ -11,18 +12,35 @@ namespace StudyBuddyAPI.Controllers
     [Route("[controller]")]
     public class LoginController : ControllerBase
     {
+        IStudyBuddyRepository studybuddyRepository;
 
         private readonly ILogger<LoginController> _logger;
 
-        public LoginController(ILogger<LoginController> logger)
+        public LoginController(ILogger<LoginController> logger, IStudyBuddyRepository _studyBuddyRepository)
         {
             _logger = logger;
+            studybuddyRepository = _studyBuddyRepository;
         }
 
         [HttpGet]
-        public bool Login()
+        [Route("GetUsers")]
+        public async Task<IActionResult> GetUsers()
         {
-            return false;
+            try
+            {
+                var users = await studybuddyRepository.GetUsers();
+                if (users == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(users);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
         }
     }
 }
