@@ -67,8 +67,13 @@
     <Build Include="dbo\Tables\Users.sql" />
     <Build Include="dbo\Tables\Roles.sql" />
     <Build Include="dbo\Tables\UserRole.sql" />
+    <Build Include="dbo\Tables\Modules.sql" />
+    <Build Include="dbo\Tables\Tasks.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="StudyBuddyDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="StudyBuddyDB.refactorlog" />
   </ItemGroup>
 </Project>

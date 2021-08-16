@@ -9,7 +9,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StudyBuddyDB", "StudyBuddyD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudyBuddyAPI", "StudyBuddyAPI\StudyBuddyAPI.csproj", "{14B2D4EB-9506-4E8F-A77B-5982280C1DC3}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Front-end(1)", "..\Front-end\", "{BF2553B6-2E39-42A9-B64D-57CA3C978B21}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Front-end", "..\Front-end\", "{BF2553B6-2E39-42A9-B64D-57CA3C978B21}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1062"

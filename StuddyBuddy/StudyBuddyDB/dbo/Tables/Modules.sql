@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Modules]
+(
+	[UniqueId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] NVARCHAR(MAX) NOT NULL, 
+    [StartDate] DATETIME NOT NULL, 
+    [EndDate] DATETIME NOT NULL, 
+    [Completed] BIT NOT NULL DEFAULT 1
+)
