@@ -11,6 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using StudyBuddyAPI.Data;
+using StudyBuddyAPI.Repository;
 
 namespace StudyBuddyAPI
 {
@@ -26,6 +29,8 @@ namespace StudyBuddyAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<studybuddyContext>(item => item.UseSqlServer(Configuration.GetConnectionString("StudyBuddyDBConnection")));
+            services.AddScoped<IStuddyBuddyRepository, StuddyBuddyRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
