@@ -2,3 +2,9 @@
 /StuddyBuddy/StudyBuddyDB/StudyBuddyDB.dbmdl
 /StuddyBuddy/StudyBuddyDB/StudyBuddyDB.jfm
 Debug/
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
