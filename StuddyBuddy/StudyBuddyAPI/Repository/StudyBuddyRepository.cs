@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using StudyBuddyAPI.Data;
 using StudyBuddyAPI.Models;
 
@@ -98,6 +99,10 @@ namespace StudyBuddyAPI.Repository
                     //Encrypt and save password
                     user.Password = Functions.ToSHA256(user.Password);
                     db.Users.Add(user);
+                    db.SaveChanges();
+
+                    //Add role to user
+                    db.UserRoles.Add(new UserRole {RoleId = 1, UserId = user.UniqueId});
                     db.SaveChanges();
                 }
 

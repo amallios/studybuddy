@@ -69,8 +69,8 @@ namespace StudyBuddyAPI.Controllers
         }
 
         [HttpPost]
-        [Route("RegisterUser")]
-        public IActionResult RegisterUser(string Username, string Firstname, string Lastname, string Email, string Password)
+        [Route("CreateUser")]
+        public IActionResult CreateUser(string Username, string Firstname, string Lastname, string Email, string Password)
         {
             try
             {
