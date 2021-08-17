@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using StudyBuddyAPI.Models;
 
 namespace StudyBuddyAPI.Repository
@@ -10,20 +11,24 @@ namespace StudyBuddyAPI.Repository
     {
         #region User Section
         User GetUser(string username);
-        Task<List<User>> GetUsers();
+        List<User> GetUsers();
         bool IsUniqueUser(string username);
-        User Authenticate(string username, string password);
-        User Register(string username, string password);
-        bool ActivateUser(string username, string token);
+        bool Authenticated(string username, string password);
+        User Register(User user);
+        bool ActivateUser(string username);
+
         #endregion
 
         #region Roles
+
         #endregion
 
         #region Modules
+
         #endregion
 
         #region Tasks
+
         #endregion
     }
 }
