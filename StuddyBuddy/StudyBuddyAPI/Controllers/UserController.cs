@@ -69,6 +69,37 @@ namespace StudyBuddyAPI.Controllers
         }
 
         [HttpPost]
+        [Route("RegisterUser")]
+        public IActionResult RegisterUser(string Username, string Firstname, string Lastname, string Email, string Password)
+        {
+            try
+            {
+                User user = new User
+                {
+                    Username = Username,
+                    Firstname = Firstname,
+                    Lastname = Lastname,
+                    Email = Email,
+                    Password = Password,
+                    Active = false
+                };
+
+                var addedUser = studybuddyRepository.Register(user);
+
+                if (addedUser == null)
+                {
+                    return Problem();
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex);
+            }
+        }
+
+        [HttpPost]
         [Route("SendEmail")]
         public IActionResult SendEmail(User user, Functions.EmailTemplates template)
         {
@@ -100,6 +131,22 @@ namespace StudyBuddyAPI.Controllers
                 throw new Exception("User could not be activated");
             }
         }
+
+        [HttpGet]
+        [Route("Authenticate")]
+        public IActionResult Authenticate(string username, string password)
+        {
+            var aunthentocated = studybuddyRepository.Authenticated(username, password);
+            if (aunthentocated == true)
+            {
+                return Ok(true);
+            }
+            else
+            {
+                return Ok(false);
+            }
+        }
+
 
         [HttpGet]
         [Route("RedirectSuccess/{username}")]

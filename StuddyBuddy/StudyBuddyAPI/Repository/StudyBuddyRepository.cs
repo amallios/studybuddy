@@ -75,7 +75,7 @@ namespace StudyBuddyAPI.Repository
                 var passwordEncrypted = Functions.ToSHA256(password);
                 var usern = GetUser(username);
 
-                if (usern.Password == passwordEncrypted)
+                if (usern != null && usern.Password == passwordEncrypted)
                     return true;
 
             }
@@ -100,6 +100,8 @@ namespace StudyBuddyAPI.Repository
                     db.Users.Add(user);
                     db.SaveChanges();
                 }
+
+                Functions.SendEmail(user, Functions.EmailTemplates.Register);
 
                 return user;
             }
