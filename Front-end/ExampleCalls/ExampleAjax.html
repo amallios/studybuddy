@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Study Buddy">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, jQuery">
+    <meta name="author" content="Team 31">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+
+    <!-- font awesome file link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- BootstrapJS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+
+    <!-- jQuery file link-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+    <title>Study Buddy</title>
+</head>
+<body>
+    <h1>Study Buddy API Call Using jQuery AJAX</h1>
+    <button id="reset">Reset »</button>
+    <div class="container">
+        <div id="content">
+            <div id="viewContent">
+                <h4>Return All Users</h4>
+                <button id="submit">Submit</button>
+                <div class="textAlignCenter">
+                    <img src="loading.gif" />
+                </div>
+                <div id="message"></div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+	 var baseurl = "https://localhost:44350/User";
+        $(document).ready(function () {
+            $("#reset").click(function (e) {
+                $("#message").html("")
+            });
+
+            $("#submit").click(function (e) {
+                var validate = Validate();
+                $("#message").html(validate);
+                if (validate.length == 0) {
+                    $.ajax({
+                        type: "GET",
+                        url: baseurl + "/GetUsers",
+                        dataType: "json",
+                        success: function (result, status, xhr) {
+                            var table = $("<table><tr><th>Users</th></tr>");
+                            table.append("<tr><td>Name:</td><td>" + result[0].firstname + "</td></tr>");
+                            table.append("<tr><td>Surname:</td><td>" + result[0].lastname + "</td></tr>");
+                            table.append("<tr><td>Email:</td><td>" + result[0].email + "</td></tr>");
+                            table.append("<tr><td>Active:</td><td>" + result[0].active + "</td></tr>");
+
+                            $("#message").html(table);
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                        }
+                    });
+                }
+            });
+
+            $(document).ajaxStart(function () {
+                $("img").show();
+            });
+
+            $(document).ajaxStop(function () {
+                $("img").hide();
+            });
+
+            function Validate() {
+                var errorMessage = "";
+				return "";
+               
+            }
+        });
+    </script>
+</body>
+</html>
