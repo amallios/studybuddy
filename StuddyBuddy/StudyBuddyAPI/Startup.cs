@@ -19,7 +19,6 @@ namespace StudyBuddyAPI
 {
     public class Startup
     {
-        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,23 +29,13 @@ namespace StudyBuddyAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<studybuddyContext>(item =>
-                item.UseSqlServer(Configuration.GetConnectionString("StudyBuddyDBConnection")));
+            services.AddDbContext<studybuddyContext>(item => item.UseSqlServer(Configuration.GetConnectionString("StudyBuddyDBConnection")));
             services.AddScoped<IStudyBuddyRepository, StudyBuddyRepository>();
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin();
-                    });
-            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo {Title = "StudyBuddyAPI", Version = "v1"});
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "StudyBuddyAPI", Version = "v1" });
             });
         }
 
@@ -63,8 +52,6 @@ namespace StudyBuddyAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
