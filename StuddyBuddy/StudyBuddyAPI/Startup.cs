@@ -19,6 +19,7 @@ namespace StudyBuddyAPI
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,7 +32,14 @@ namespace StudyBuddyAPI
         {
             services.AddDbContext<studybuddyContext>(item => item.UseSqlServer(Configuration.GetConnectionString("StudyBuddyDBConnection")));
             services.AddScoped<IStudyBuddyRepository, StudyBuddyRepository>();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                    });
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -52,6 +60,8 @@ namespace StudyBuddyAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 
