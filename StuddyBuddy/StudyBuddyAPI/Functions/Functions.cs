@@ -73,7 +73,7 @@ namespace StudyBuddyAPI
                 case EmailTemplates.Register:
                 {
                     emailBody.Append(
-                        "<p>Dear %FIRSTNAME% %LASTNAME%,&nbsp;</p>\r\n<p>Thank you for registering with Study Buddy.</p>\r\n<p><span style=\"text-decoration: underline;\"><a href=\"http://www.studybuddy.com/activate/username=%USERNAME%\" title=\"Click here\">Click here</a> </span>to reset your password using our secure server.</p>\r\n<p>If you did not register with the Study Budy, please ignore this email.</p>\r\n<p>If clicking the link doesn't seem to work, you can copy and paste the link into your browser's address window, or retype it there. After using the link, your account will be activated.&nbsp;</p>");
+                        "<p>Dear %FIRSTNAME% %LASTNAME%,&nbsp;</p>\r\n<p>Thank you for registering with Study Buddy.</p>\r\n<p><span style=\"text-decoration: underline;\"><a href=\"https://studdybuddywa.azurewebsites.net/User/ActivateUser?username=%USERNAME%\" title=\"Click here\">Click here</a> </span>to reset your password using our secure server.</p>\r\n<p>If you did not register with the Study Budy, please ignore this email.</p>\r\n<p>If clicking the link doesn't seem to work, you can copy and paste the link into your browser's address window, or retype it there. After using the link, your account will be activated.&nbsp;</p>");
                 }
                     break;
                 default:

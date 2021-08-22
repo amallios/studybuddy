@@ -116,6 +116,7 @@ namespace StudyBuddyAPI.Controllers
         }
 
         [HttpPost]
+        [HttpGet]
         [Route("ActivateUser")]
         public IActionResult ActivateUser(string username)
         {
