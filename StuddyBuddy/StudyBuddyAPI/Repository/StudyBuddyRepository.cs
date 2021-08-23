@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using StudyBuddyAPI.Data;
 using StudyBuddyAPI.Models;
+using Task = StudyBuddyAPI.Models.Task;
 
 namespace StudyBuddyAPI.Repository
 {
@@ -18,6 +19,7 @@ namespace StudyBuddyAPI.Repository
             db = _db;
         }
 
+        #region Users
         /// <summary>
         /// Get User account based on username
         /// </summary>
@@ -134,5 +136,89 @@ namespace StudyBuddyAPI.Repository
             return true;
 
         }
+
+        #endregion
+
+        #region Modules
+
+        /// <summary>
+        /// Get all Modules
+        /// </summary>
+        /// <returns></returns>
+        public List<Module> GetModules()
+        {
+            if (db != null)
+            {
+                return db.Modules.ToList();
+            }
+
+            return null;
+        }
+
+        public List<Module> GetModulesPerUser(string username)
+        {
+            if (db != null)
+            {
+                throw new NotImplementedException();
+            }
+
+            return null;
+        }
+
+        public Module GetModuleByName(string moduleName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Module GetModuleByUniqueId(int uniqueId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Module InsertModule(Module module)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Module UpdateModule(Module module)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RemoveModule(int uniqueId)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region Tasks
+        public List<Task> GetTasksPerModule(Module module)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task GetTaskByUniqueId(int uniqueId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task InsertTask(Task task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateTask(Task task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool RemoveTask(Task task)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        #endregion
     }
 }
