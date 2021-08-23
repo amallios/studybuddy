@@ -1,255 +1,396 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet");
-
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,200&display=swap');
 
 :root{
     --blue:#0188DF;
     --black:#354046;
 }
 
-*{
-    font-family: 'Roboto', sans-serif;
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    border: none !important;
-    outline: none !important;
-    text-decoration: none !important;
-    text-transform: capitalize;
-    font-weight: 400;
-    transition:all .2s linear;
-}
-
-*::selection{
-    background:var(--black);
-    color: #fff;
-}
-
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
 body{
-    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+    size:100%;
 }
 
-section{
-    overflow: hidden;
+/* start Header and Home page */
+.home-page{
+    min-height:100vh;
 }
 
-/* front page Button "Learn More" */
-.button{
-    height: 3.5rem;
-    width: 15rem;
-    background: var(--blue);
-    color:#fff;
-    font-size: 1.7rem;
-    text-transform: capitalize;
-    border-radius: .5rem;
-    cursor: pointer;
+.header-area{
     position: relative;
-    z-index: 0;
-    overflow:hidden;
-    margin: 1rem 0;
-}
-
-.button::before{
-    content: '';
-    position: absolute;
-    top: -100%; left:0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--black);
-    z-index: -1;
-    transition: .2s linear;
-}
-
-.button:hover:before{
-    top: 0%; left:0;
-}
-
-.button:hover{
-    box-shadow: .1rem .5rem var(--blue);
-}
-
-
-/* logo image */
-header .container img{
-    width: 10rem;
-    height: 10rem;
-}
-
-/* header section */
-header{
-    width: 100%;
-    position: fixed;
-    top:0; left: 0;
-    padding: 2rem 1rem;
+    display: flex;
+    padding: 10px;
+    font-size: 25px;
     z-index: 1000;
-    background: #fff;
     box-shadow: 0 .1rem .3rem #999;
 }
 
-.header-active{
-    background:#fff;
-    box-shadow:0 .3rem .5rem rgba(0,0,0,.3);
-    padding:.5rem 1rem;
+.header-area .logo{
+    font-size:35px;
 }
 
-header .container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-area .logo span{
+    color: var(--blue);
+    font-weight: bolder;
 }
 
-header a{
-    color:var(--black);
+.header-area .logo:hover{
+    color: var(--blue);
+    font-size: 35px ;
+    padding-top:5px;
 }
 
-header a:hover{
-    color:var(--blue);
-}
-
-header .container .logo{
-    font-size: 3rem;
-}
-header .container .logo span{
-    color:var(--blue);
-}
-
-header .nav ul{
-    margin: 0; padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-area .links{
     list-style: none;
+    text-align: right;
+    width:100%;
+    padding-left: 0;
+    padding-right: 20px;
 }
 
-header .nav ul li{
-    margin: 0 1rem;
-}
-
-header .nav ul li a{
-    font-size: 2rem;
-}
-
-header .fa-bars{
-    font-size: 3.5rem;
-    color:var(--blue);
-    cursor:pointer;
-    display:none;
-}
-
-header .fa-times{
-    transform: rotate(180deg);
-}
-
-/* Home page section */
-.home .content h1{
-    font-size: 2.5rem;
-    color:var(--black);
-}
-
-.home .content h1 span{
-    color:var(--blue);
-}
-
-.home .content h4{
-    font-size: 1.9rem;
-    color:var(--black);
-}
-
-.home .content h4 span{
-    font-size: 1.9rem;
-    color:var(--blue);
-}
-
-/* About us page section */
-.about .heading{
-    background:#fff;
-    margin: 3rem;
-    padding-top: 7rem;
+.header-area .links li{
     display: inline-block;
-    font-size: 3.5rem;
+    margin-left: 20px;
+}
+
+.header-area .links li a{
+   text-decoration: none;
+   color: var(--black)
+}
+
+.header-area .links li a:hover{
+    color: var(--blue)
+ }
+
+.introduction-text{
+    padding: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    display:block;
+    padding-right: 20px;
     color: var(--black);
 }
 
-.about .heading span{
+.introduction-text h1 span{
     color: var(--blue);
 }
 
-.about .heading:hover{
+.introduction-text p span{
     color: var(--blue);
-    text-align: center;
 }
 
-.about .content .box{
+/* End Header and Home page */
+
+
+/* Start Footer */
+.footer{
+    background:var(--black);
+  }
+
+  .footer h1{
+    font-size: 1rem;
+}
+
+.footer .credit{
+    color:#fff;
+    width:80%;
+    margin:0;
+    padding:1rem 0;
+    padding-bottom: .5rem;
+  }
+  
+  .footer .credit span{
+    color:var(--blue);
+  }
+  
+  header .fa-times{
+    transform: rotate(180deg);
+  }
+
+  /* End Footer */
+
+  /* Home image */
+#hp{
+    float: left;    
+    margin-left: 15px;
+    /* margin-top: 50px; */
+}
+
+/* Home paragraph */
+.Intro-image .content .box{
+    text-align: justify;
     margin:3rem 0;
+    text-align: left;
+    
+  }
+  
+  .Intro-image .content .box h3{
+    font-size: 25px;
+    color:var(--black);
+  }
+  
+  .Intro-image .content .box h3 i{
+    color:var(--blue);
+  }
+  
+  .Intro-image .content .box p{
+    font-size: 20px;
+    padding-left: 20px;
+    color:#666;
+  }
+
+  /* Logo image */
+  header .logo img{
+    transform: rotate(-45deg);
 }
 
-.about .content .box h3{
-    font-size: 2.5rem;
+/* Start Login/Sign-Up Page */
+.login-wrap{
+    margin-top: 30%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    max-width:600px;
+	  min-height:700px;
+    background: rgb(252, 249, 249);
+    border-radius: 15px;
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+
+.login-html{
+    margin:0;
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:40px 40px 40px 50px;
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+	display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+
+.login-html .tab{
+	font-size:22px;
+	margin-right:30px;
+	padding-bottom:5px;
+	margin: 10px 20px 30px 40px;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+	color:var(--blue);
+	border-color:var(--blue);
+    padding-bottom: 5px;
+}
+
+.login-form{
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+}
+
+.login-form .group{
+	margin-bottom:20px;
+    /* padding-left: 60px;  */
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:var(--black);
+	display:block;
+}
+
+.login-form .group .button:hover{
     color:var(--black);
 }
 
-.about .content .box h3 i{
-    padding: 0 1rem ;
-    color:var(--blue);
+.login-form .group .input,
+.login-form .group .button{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(80, 28, 28, 0.1);
+  color: #fff;
+}
+.login-form .group .input{
+  color: var(--black);
 }
 
-.about .content .box p{
-    font-size: 1.7rem;
-    padding-left: 6rem;
+.login-form .group input[data-type="password"]{
+	-webkit-text-security:circle;
 }
 
-/* Footer section */
-.footer{
-    
+.login-form .group .label{
+	color:var(--black);
+    padding: 5px;
+	font-size:13px;
 }
+
+.login-form .group .button{
+	background:var(--blue);
+    width:100%;
+    align-content:space-between;
+}
+
+.login-form .group label .icon{
+	width:15px;
+	height:15px;
+	border-radius:2px;
+	position:relative;
+	display:inline-block;
+	background:rgb(196, 191, 191);
+}
+
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+	content:'';
+	width:10px;
+  padding-top: 3px;
+	height:2px;
+	background:var(--blue);
+	position:absolute;
+	transition:all .2s ease-in-out 0s;
+}
+
+.login-form .group label .icon:before{
+	left:3px;
+	width:5px;
+	bottom:6px;
+	transform:scale(0) rotate(0);
+}
+
+.login-form .group label .icon:after{
+	top:6px;
+	right:0;
+	transform:scale(0) rotate(0);
+}
+
+.login-form .group .check:checked + label{
+	color:gray;
+}
+
+.login-form .group .check:checked + label .icon{
+	background:#fff;
+    border-color:gray;
+}
+
+.login-form .group .check:checked + label .icon:before{
+	transform:scale(1) rotate(45deg);
+}
+
+.login-form .group .check:checked + label .icon:after{
+	transform:scale(1) rotate(-45deg);
+}
+
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+	transform:rotate(0);
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+	transform:rotate(0);
+}
+
+.hr{
+	height:2px;
+	margin:0 0 50px 0;
+	background:rgba(255,255,255,.2);
+}
+
+.foot-lnk{
+	text-align:center;
+}
+.foot-lnk:hover{
+	color:var(--blue);
+}
+
+/* End Login/Sign-Up Page */
+
+
 
 /* media queries  */
 
 @media (max-width:768px){
 
-    html{
-      font-size: 55%;
-    }
-  
-    header .fa-bars{
-      display: block;
-    }
-  
-    header .nav{
-      position: fixed;
-      top:-100rem; left:50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 0 100vh rgba(0,0,0,.3);
-      border-radius: .5rem;
-      border:.3rem solid var(--blue) !important;
-      background:#fff;
-      width: 95%;
-      opacity: 0;
-    }
-  
-    header .nav ul{
-      width: 100%;
-      flex-flow: column;
-      padding:2rem 0;
-    }
-  
-    header .nav ul li{
-      width: 100%;
-      text-align: center;
-      margin:1rem 0;
-    }
-  
-    header .nav ul li a{
-      font-size: 3rem;
-      display: block;
-    }
+  html{
+    font-size: 55%;
+  }
 
-    header .nav-toggle{
-        top: 50%;
-        opacity: 1;
-    }
+  header .fa-bars{
+    display: block;
+  }
+
+  header .nav{
+    position: fixed;
+    top:-100rem; left:50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 100vh rgba(0,0,0,.3);
+    border-radius: .5rem;
+    border:.3rem solid var(--blue) !important;
+    background:#fff;
+    width: 95%;
+    opacity: 0;
+  }
+
+  header .nav ul{
+    width: 100%;
+    flex-flow: column;
+    padding:2rem 0;
+  }
+
+  header .nav ul li{
+    width: 100%;
+    text-align: center;
+    margin:1rem 0;
+  }
+
+  header .nav ul li a{
+    font-size: 3rem;
+    display: block;
+  }
+
+  header .nav-toggle{
+    top:50%;
+    opacity: 1;
+  }
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+  .col-md-4 img{
+    height: 50%;
+    padding-top: 5rem;
+  }
+
+  .login .center{
+    margin-top: 45%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.05);
+  }
+
 }
-
