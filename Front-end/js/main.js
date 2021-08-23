@@ -1,60 +1,25 @@
-$(document).ready(function(){
-
-    $('.fa-bars').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.nav').toggleClass('nav-toggle');
-    });
-    
-    $(window).on('load scroll',function(){
-        $('.fa-bars').removeClass('fa-times');
-        $('.nav').removeClass('nav-toggle');
-
-        if($(window).scrollTop() > 10){
-            $('header').addClass('header-active');
-          }else{
-            $('header').removeClass('header-active');
-          }
-      
-        });
-      
-        $('.facility').magnificPopup({
-          delegate:'a',
-          type:'image',
-          gallery:{
-            enabled:true
-          }
-        });
-      
-      });
-
 // My Header Template
 class MyHeader extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
-            <!-- header and nav bar section starts -->
-            <header>
-                <div class="container">
-                    <a href="#" class="logo">
-                        <i class="fas fa-book-open"></i>
-                        <span> S</span>tudy<span>B</span>uddy
-                        <i class="fas fa-graduation-cap"></i>
-                    </a>
-                    
-                    <nav class="nav">
-                        <ul>
-                            <li><a href="/html/index.html">Home</a></li>
-                            <li><a href="login">Login</a></li>
-                            <li><a href="signup">Sign Up</a></li>
-                            <li><a href="/html/about.html">About us</a></li>
-                        </ul>
-                    </nav>
-                    
-                    <!-- right bar for responsive view -->
-                    <div class="fas fa-bars"> </div>
-
+        <!-- Start Header -->
+    <header class=">
+        <div class = "home-page">
+            <div class="header-area">
+                <div class="logo">
+                    <img src="../images/book.png" width = 8% id = "book" alt="">
+                    <span>S</span>tudy<span>B</span>uddy
                 </div>
-            </header>
-            <!-- header and nav bar section ends -->`
+        
+                <ul class="links">
+                    <li><a href="../html/index.html">Home</a></li>
+                    <li><a href="../html/sign.html">Sign In/Sign Up</a></li>
+                    <li><a href="../html/index.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+        <!-- End Header -->`
     }
 }
 
@@ -64,7 +29,14 @@ customElements.define('my-header', MyHeader)
 // My MyFooter Template
 class MyFooter extends HTMLElement{
     connectedCallback(){
-        this.innerHTML = ``
+        this.innerHTML = `
+        <!-- Start footer -->
+        <footer>
+          <div class="footer">
+              <h1 class="credit text-center mx-auto">Created by <span>Team 31 Group 4</span> | all rights reserved © 2021.</h1>
+          </div>
+        </footer>
+        <!-- End footer -->`
     }
 }
 
