@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Internal;
 using StudyBuddyAPI.Data;
 using StudyBuddyAPI.Models;
 using Task = StudyBuddyAPI.Models.Task;
@@ -157,9 +158,15 @@ namespace StudyBuddyAPI.Repository
 
         public List<Module> GetModulesPerUser(string username)
         {
-            if (db != null)
+            if (db != null) 
             {
-                throw new NotImplementedException();
+
+                var modules = db.UsersModules.Where(x => x.UserId == db.Users.FirstOrDefault(u => u.Username == username).UniqueId).Select(y => y.Module).ToList();
+
+               
+                return modules;
+               
+                
             }
 
             return null;
