@@ -32,5 +32,26 @@ namespace StudyBuddyAPI.Controllers
         {
             throw new NotImplementedException();
         }
+
+        [HttpGet]
+        [Route("GetModulesPerUser")]
+        public IActionResult GetModulesPerUser(string username)
+        {
+            try
+            {
+                var module = studybuddyRepository.GetModulesPerUser(username);
+                if (module == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(module);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
+        }
     }
 }

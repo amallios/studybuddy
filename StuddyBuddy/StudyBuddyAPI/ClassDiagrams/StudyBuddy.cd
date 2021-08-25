@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="StudyBuddyAPI.Models.Module">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAQgIAAAAAAAAAAIAEAAQAA=</HashCode>
+      <FileName>Models\Module.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Models.Role">
+    <Position X="6" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAAAAAQAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Models.Task">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAQgAAAAAAAAAAAACEAAQAA=</HashCode>
+      <FileName>Models\Task.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Models.User">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAIAQAAAAAAIAAAAAgiAAAAAAAAQAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Models.UserRole">
+    <Position X="3" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAIAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Models\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Models.UsersModule">
+    <Position X="1.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAACAAAQAA=</HashCode>
+      <FileName>Models\UsersModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Repository.StudyBuddyRepository">
+    <Position X="10.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAhABAAAgUACAQABIAAAAAAAEBAAgAEAAAAEFACAA=</HashCode>
+      <FileName>Repository\StudyBuddyRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="StudyBuddyAPI.Functions">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="StudyBuddyAPI.Functions.EmailTemplates">
+        <TypeIdentifier>
+          <NewMemberFileName>Functions\Functions.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAgAACAAAAEAAAAA=</HashCode>
+      <FileName>Functions\Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StudyBuddyAPI.Data.studybuddyContext">
+    <Position X="14.25" Y="5.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAQAAAAAAAAAAAQMgAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>Data\studybuddyContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.EntityFrameworkCore.DbContext">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="StudyBuddyAPI.Repository.IStudyBuddyRepository">
+    <Position X="8.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAhABAAAgEACAQABIAAAAAAAEBAAgAEAAAAEFACAA=</HashCode>
+      <FileName>Repository\IStudyBuddyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
