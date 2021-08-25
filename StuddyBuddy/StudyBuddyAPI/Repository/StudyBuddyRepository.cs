@@ -180,7 +180,12 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Module GetModuleByName(string moduleName)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                return db.Modules.FirstOrDefault(x => x.Name == moduleName);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -190,7 +195,12 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Module GetModuleByUniqueId(int uniqueId)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                return db.Modules.FirstOrDefault(x => x.UniqueId == uniqueId);
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -200,7 +210,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Module InsertModule(Module module)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Modules.Add(module);
+                db.SaveChanges();
+
+                return module;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -210,7 +228,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Module UpdateModule(Module module)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Modules.Update(module);
+                db.SaveChanges();
+
+                return module;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -220,7 +246,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public bool RemoveModule(int uniqueId)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Modules.Remove(db.Modules.FirstOrDefault(x => x.UniqueId == uniqueId));
+                db.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
 
         #endregion
@@ -233,7 +267,14 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public List<Task> GetTasksPerModule(Module module)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                List<Task> tasks = db.Tasks.Where(x => x.ModuleId == module.UniqueId).ToList();
+
+                return tasks;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -243,7 +284,14 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Task GetTaskByUniqueId(int uniqueId)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                Task tasks = db.Tasks.FirstOrDefault(x => x.UniqueId == uniqueId);
+
+               return tasks;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -253,7 +301,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Task InsertTask(Task task)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Tasks.Add(task);
+                db.SaveChanges();
+
+                return task;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -263,7 +319,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public Task UpdateTask(Task task)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Tasks.Update(task);
+                db.SaveChanges();
+
+                return task;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -273,7 +337,15 @@ namespace StudyBuddyAPI.Repository
         /// <returns></returns>
         public bool RemoveTask(Task task)
         {
-            throw new NotImplementedException();
+            if (db != null)
+            {
+                db.Tasks.Remove(db.Tasks.FirstOrDefault(x => x.UniqueId == task.UniqueId));
+                db.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
 
 

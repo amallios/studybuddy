@@ -26,20 +26,14 @@ namespace StudyBuddyAPI.Controllers
             studybuddyRepository = _studyBuddyRepository;
         }
 
+
         [HttpGet]
         [Route("GetModules")]
         public IActionResult GetModules()
         {
-            throw new NotImplementedException();
-        }
-
-        [HttpGet]
-        [Route("GetModulesPerUser")]
-        public IActionResult GetModulesPerUser(string username)
-        {
             try
             {
-                var module = studybuddyRepository.GetModulesPerUser(username);
+                List<Module> module = studybuddyRepository.GetModules();
                 if (module == null)
                 {
                     return NotFound();
@@ -51,7 +45,127 @@ namespace StudyBuddyAPI.Controllers
             {
                 return BadRequest();
             }
-
         }
+
+        [HttpGet]
+        [Route("GetModulesPerUser")]
+        public IActionResult GetModulesPerUser(string username)
+        {
+            try
+            {
+                List<Module> module = studybuddyRepository.GetModulesPerUser(username);
+                if (module == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(module);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("GetModuleByName")]
+        public IActionResult GetModuleByName(string moduleName)
+        {
+            try
+            {
+                Module module = studybuddyRepository.GetModuleByName(moduleName);
+                if (module == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(module);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("GetModuleByUniqueId")]
+        public IActionResult GetModuleByUniqueId(int uniqueId)
+        {
+            try
+            {
+                Module module = studybuddyRepository.GetModuleByUniqueId(uniqueId);
+                if (module == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(module);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("InsertModule")]
+        public IActionResult InsertModule(Module module)
+        {
+            try
+            {
+                Module moduleAdded = studybuddyRepository.InsertModule(module);
+                if (moduleAdded == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(moduleAdded);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("UpdateModule")]
+        public IActionResult UpdateModule(Module module)
+        {
+            try
+            {
+                Module moduleUpdated = studybuddyRepository.UpdateModule(module);
+                if (moduleUpdated == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(moduleUpdated);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("RemoveModule")]
+        public IActionResult RemoveModule(int uniqueId)
+        {
+            try
+            {
+                bool moduleRemove = studybuddyRepository.RemoveModule(uniqueId);
+                if (moduleRemove == false)
+                {
+                    return NotFound();
+                }
+
+                return Ok(true);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }
