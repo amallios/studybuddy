@@ -1,24 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="StudyBuddyAPI.Controllers.ModuleController">
-    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Position X="3.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAIAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAEACAAAhIAAAAAIAEAAAgAAAAAAAAACAA=</HashCode>
       <FileName>Controllers\ModulesController.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="StudyBuddyAPI.Controllers.TaskController">
-    <Position X="6.25" Y="0.5" Width="1.5" />
-    <InheritanceLine Type="Microsoft.AspNetCore.Mvc.ControllerBase" ManuallyRouted="true">
-      <Path>
-        <Point X="4.25" Y="4.5" />
-        <Point X="4.25" Y="4.112" />
-        <Point X="7" Y="4.112" />
-        <Point X="7" Y="2.569" />
-      </Path>
-    </InheritanceLine>
+    <Position X="6.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAoAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAABABAAAAAAAAQAgAAAAAAIAAAAAAAAAAAAAFAAAA=</HashCode>
       <FileName>Controllers\TasksController.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -30,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Microsoft.AspNetCore.Mvc.ControllerBase">
-    <Position X="3.5" Y="4.5" Width="1.5" />
+    <Position X="3.5" Y="4.5" Width="2" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
