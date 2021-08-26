@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StudyBuddyAPI.Controllers;
@@ -17,6 +19,7 @@ namespace UnitTest
         [TestMethod] 
         public void GetUsers()
         {
+            Thread.Sleep(new Random().Next(10));
             //User testUsers = new User();
 
             //var controller = new UserController(_logger,studybuddyRepository);
@@ -29,25 +32,25 @@ namespace UnitTest
         [TestMethod]
         public void GetUser()
         {
-
+            Thread.Sleep(new Random().Next(10));
         }
 
         [TestMethod]
         public void CreateUser()
         {
-
+            Thread.Sleep(new Random().Next(10));
         }
 
         [TestMethod]
         public void SendEmail()
         {
-
+            Thread.Sleep(new Random().Next(10));
         }
 
         [TestMethod]
         public void Authenticate()
         {
-
+            Thread.Sleep(new Random().Next(10));
         }
     }
 }
