@@ -34,11 +34,11 @@ namespace StudyBuddyAPI.Repository
 
         #region Tasks
 
-        List<Models.Task> GetTasksPerModule(Module module);
+        List<Models.Task> GetTasksPerModule(int moduleId);
         Models.Task GetTaskByUniqueId(int uniqueId);
         Models.Task InsertTask(Models.Task task);
         Models.Task UpdateTask(Models.Task task);
-        bool RemoveTask(Models.Task task);
+        bool RemoveTask(int uniqueId);
 
         #endregion
 

@@ -274,13 +274,13 @@ namespace StudyBuddyAPI.Repository
         /// <summary>
         /// Get Task per module
         /// </summary>
-        /// <param name="module"></param>
+        /// <param name="moduleId"></param>
         /// <returns></returns>
-        public List<Task> GetTasksPerModule(Module module)
+        public List<Task> GetTasksPerModule(int moduleId)
         {
             if (db != null)
             {
-                List<Task> tasks = db.Tasks.Where(x => x.ModuleId == module.UniqueId).ToList();
+                List<Task> tasks = db.Tasks.Where(x => x.ModuleId == moduleId).ToList();
 
                 return tasks;
             }
@@ -344,13 +344,13 @@ namespace StudyBuddyAPI.Repository
         /// <summary>
         /// Remove Task
         /// </summary>
-        /// <param name="task"></param>
+        /// <param name="uniqueId"></param>
         /// <returns></returns>
-        public bool RemoveTask(Task task)
+        public bool RemoveTask(int uniqueId)
         {
             if (db != null)
             {
-                db.Tasks.Remove(db.Tasks.FirstOrDefault(x => x.UniqueId == task.UniqueId));
+                db.Tasks.RemoveRange(db.Tasks.FirstOrDefault(x => x.UniqueId == uniqueId));
                 db.SaveChanges();
 
                 return true;
