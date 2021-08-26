@@ -26,7 +26,7 @@ namespace StudyBuddyAPI.Repository
         Module GetModuleByName(string moduleName);
         Module GetModuleByUniqueId(int uniqueId);
 
-        Module InsertModule(Module module);
+        Module InsertModule(Module module, int userId);
         Module UpdateModule(Module module);
         bool RemoveModule(int uniqueId, int userId);
 

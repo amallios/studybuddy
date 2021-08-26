@@ -209,11 +209,14 @@ namespace StudyBuddyAPI.Repository
         /// </summary>
         /// <param name="module"></param>
         /// <returns></returns>
-        public Module InsertModule(Module module)
+        public Module InsertModule(Module module, int userId)
         {
             if (db != null)
             {
                 db.Modules.Add(module);
+                db.SaveChanges();
+
+                db.UsersModules.Add(new UsersModule() { UserId = userId, ModuleId = module.UniqueId });
                 db.SaveChanges();
 
                 return module;

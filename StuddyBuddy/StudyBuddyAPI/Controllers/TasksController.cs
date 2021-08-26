@@ -45,8 +45,6 @@ namespace StudyBuddyAPI.Controllers
             {
                 return BadRequest(e);
             }
-
-            return Ok(true);
         }
 
         [HttpGet]
@@ -67,17 +65,15 @@ namespace StudyBuddyAPI.Controllers
             {
                 return BadRequest(e);
             }
-
-            return Ok(true);
         }
 
         [HttpPost]
         [Route("InsertTask")]
-        public IActionResult InsertTask(string moduleName, DateTime startDate, DateTime endDate, int moduleId)
+        public IActionResult InsertTask(string taskName, DateTime startDate, DateTime endDate, int moduleId)
         {
             try
             {
-                Task taskInserted = studybuddyRepository.InsertTask(new Task(){ Name  = moduleName, StartDate = startDate, EndDate = endDate, Completed = false, ModuleId = moduleId});
+                Task taskInserted = studybuddyRepository.InsertTask(new Task(){ Name  = taskName, StartDate = startDate, EndDate = endDate, Completed = false, ModuleId = moduleId});
                 if (taskInserted == null)
                 {
                     return NotFound();
@@ -89,17 +85,15 @@ namespace StudyBuddyAPI.Controllers
             {
                 return BadRequest(e);
             }
-
-            return Ok(true);
         }
 
         [HttpPost]
         [Route("UpdateTask")]
-        public IActionResult UpdateTask(int taskId,string moduleName, DateTime startDate, DateTime endDate, int moduleId, bool completed)
+        public IActionResult UpdateTask(int taskId,string taskName, DateTime startDate, DateTime endDate, int moduleId, bool completed)
         {
             try
             {
-                Task taskUpdated = studybuddyRepository.UpdateTask(new Task() { UniqueId = taskId, Name = moduleName, StartDate = startDate, EndDate = endDate, Completed = false, ModuleId = moduleId });
+                Task taskUpdated = studybuddyRepository.UpdateTask(new Task() { UniqueId = taskId, Name = taskName, StartDate = startDate, EndDate = endDate, Completed = false, ModuleId = moduleId });
                 if (taskUpdated == null)
                 {
                     return NotFound();
@@ -111,8 +105,6 @@ namespace StudyBuddyAPI.Controllers
             {
                 return BadRequest(e);
             }
-
-            return Ok(true);
         }
 
         [HttpPost]

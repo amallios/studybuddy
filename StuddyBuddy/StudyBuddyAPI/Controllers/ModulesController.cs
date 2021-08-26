@@ -109,11 +109,11 @@ namespace StudyBuddyAPI.Controllers
 
         [HttpPost]
         [Route("InsertModule")]
-        public IActionResult InsertModule(Module module)
+        public IActionResult InsertModule(string moduleName, DateTime startDate, DateTime endDate, int userId)
         {
             try
             {
-                Module moduleAdded = studybuddyRepository.InsertModule(module);
+                Module moduleAdded = studybuddyRepository.InsertModule(new Module(){ Name = moduleName, StartDate = startDate, EndDate = endDate, Completed = false}, userId);
                 if (moduleAdded == null)
                 {
                     return NotFound();
@@ -129,11 +129,11 @@ namespace StudyBuddyAPI.Controllers
 
         [HttpPost]
         [Route("UpdateModule")]
-        public IActionResult UpdateModule(Module module)
+        public IActionResult UpdateModule(int moduleId, string moduleName, DateTime startDate, DateTime endDate, bool completed)
         {
             try
             {
-                Module moduleUpdated = studybuddyRepository.UpdateModule(module);
+                Module moduleUpdated = studybuddyRepository.UpdateModule(new Module(){ UniqueId = moduleId, Name = moduleName, StartDate = startDate, EndDate = endDate, Completed = completed });
                 if (moduleUpdated == null)
                 {
                     return NotFound();
