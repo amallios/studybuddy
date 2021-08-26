@@ -41,9 +41,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(module);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -61,9 +61,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(module);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -81,9 +81,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(module);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -101,9 +101,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(module);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -121,9 +121,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(moduleAdded);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -141,9 +141,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(moduleUpdated);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
@@ -161,9 +161,9 @@ namespace StudyBuddyAPI.Controllers
 
                 return Ok(true);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return BadRequest();
+                return BadRequest(e);
             }
         }
 
