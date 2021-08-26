@@ -28,7 +28,7 @@ namespace StudyBuddyAPI.Repository
 
         Module InsertModule(Module module);
         Module UpdateModule(Module module);
-        bool RemoveModule(int uniqueId);
+        bool RemoveModule(int uniqueId, int userId);
 
         #endregion
 

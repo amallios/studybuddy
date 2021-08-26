@@ -89,11 +89,11 @@ namespace StudyBuddyAPI.Controllers
 
         [HttpGet]
         [Route("GetModuleByUniqueId")]
-        public IActionResult GetModuleByUniqueId(int uniqueId)
+        public IActionResult GetModuleByUniqueId(int moduleId)
         {
             try
             {
-                Module module = studybuddyRepository.GetModuleByUniqueId(uniqueId);
+                Module module = studybuddyRepository.GetModuleByUniqueId(moduleId);
                 if (module == null)
                 {
                     return NotFound();
@@ -149,11 +149,11 @@ namespace StudyBuddyAPI.Controllers
 
         [HttpPost]
         [Route("RemoveModule")]
-        public IActionResult RemoveModule(int uniqueId)
+        public IActionResult RemoveModule(int moduleId, int userId)
         {
             try
             {
-                bool moduleRemove = studybuddyRepository.RemoveModule(uniqueId);
+                bool moduleRemove = studybuddyRepository.RemoveModule(moduleId, userId);
                 if (moduleRemove == false)
                 {
                     return NotFound();

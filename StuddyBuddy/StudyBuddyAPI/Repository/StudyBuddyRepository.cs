@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -244,11 +245,21 @@ namespace StudyBuddyAPI.Repository
         /// </summary>
         /// <param name="uniqueId"></param>
         /// <returns></returns>
-        public bool RemoveModule(int uniqueId)
+        public bool RemoveModule(int moduleId, int userId)
         {
             if (db != null)
             {
-                db.Modules.Remove(db.Modules.FirstOrDefault(x => x.UniqueId == uniqueId));
+
+                //Remove the link to usermodule
+                db.UsersModules.RemoveRange(db.UsersModules.Where(x => x.UserId == userId && x.ModuleId == moduleId));
+                db.SaveChanges();
+
+                //Remove the Task, then the usermodule entries then the module... 
+                db.Tasks.RemoveRange(db.Tasks.Where(x => x.ModuleId == moduleId));
+                db.SaveChanges();
+
+
+                db.Modules.Remove(db.Modules.FirstOrDefault(x => x.UniqueId == moduleId));
                 db.SaveChanges();
 
                 return true;
