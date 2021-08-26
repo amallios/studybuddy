@@ -14,7 +14,8 @@ namespace UnitTest
 
         private readonly ILogger<UserController> _logger;
 
-        [TestMethod] public void GetAllUsers()
+        [TestMethod] 
+        public void GetUsers()
         {
             //User testUsers = new User();
 
@@ -26,8 +27,27 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void GetUser()
         {
+
+        }
+
+        [TestMethod]
+        public void CreateUser()
+        {
+
+        }
+
+        [TestMethod]
+        public void SendEmail()
+        {
+
+        }
+
+        [TestMethod]
+        public void Authenticate()
+        {
+
         }
     }
 }
