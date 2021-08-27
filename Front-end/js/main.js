@@ -3,18 +3,18 @@ class MyHeader extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
         <!-- Start Header -->
-    <header class=">
+    <header>
         <div class = "home-page">
             <div class="header-area">
                 <div class="logo">
-                    <img src="../images/book.png" width = 8% id = "book" alt="">
+                    <img src="../Front-End/images/book.png" width="7%" id="book" alt="">
                     <span>S</span>tudy<span>B</span>uddy
                 </div>
         
                 <ul class="links">
-                    <li><a href="../html/index.html">Home</a></li>
-                    <li><a href="../html/sign.html">Sign In/Sign Up</a></li>
-                    <li><a href="../html/index.html">About</a></li>
+                    <li><a href="../Front-End/index.html">Home</a></li>
+                    <li><a href="../Front-End/sign.html">Sign In/Sign Up</a></li>
+                    <li><a href="../Front-End/index.html">About</a></li>
                 </ul>
             </div>
         </div>
