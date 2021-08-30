@@ -19,14 +19,13 @@ namespace UnitTest
         [TestMethod] 
         public void GetUsers()
         {
-            Thread.Sleep(new Random().Next(10));
-            //User testUsers = new User();
+            User testUsers = new User();
 
-            //var controller = new UserController(_logger,studybuddyRepository);
+            var controller = new UserController(_logger, studybuddyRepository);
 
-            //var result = controller.GetUsers() as List<User>;
+            var result = controller.GetUsers() as List<User>;
 
-            //Assert.Equals(result.Count, result.Count);
+            Assert.Equals(result.Count, 2);
         }
 
         [TestMethod]
