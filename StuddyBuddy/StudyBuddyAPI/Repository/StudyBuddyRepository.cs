@@ -166,7 +166,7 @@ namespace StudyBuddyAPI.Repository
         {
             if (db != null)
             {
-                var modules = db.UsersModules.Where(x => x.UserId == db.Users.FirstOrDefault(u => u.Username == username).UniqueId).Select(y => y.Module).ToList();
+                var modules = db.UsersModules.Where(x => x.UserId == db.Users.FirstOrDefault(u => u.Username == username).UniqueId).Include(x => x.Module.Tasks).Select(y => y.Module).ToList();
 
                 return modules;
             }
